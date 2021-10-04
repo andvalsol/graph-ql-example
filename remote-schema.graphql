@@ -1,0 +1,25 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type Collection {
+    id: ID!
+    items: [Item!]!
+    title: String!
+}
+
+type Item {
+    collection: Collection
+    id: ID!
+    imageUrl: String!
+    name: String!
+    price: Float!
+}
+
+type Query {
+    collection(id: ID!): Collection
+    collections: [Collection!]!
+    getCollectionsByTitle(title: String): Collection
+}
